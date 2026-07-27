@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #2563EB;
+  --color-primary-dark: #1E40AF;
+  --color-primary-light: #DBEAFE;
+  --color-primary-muted: #F8FAFC;
+  --color-primary-border: #D1D5DB;
+  --color-surface: #ffffff;
+  --color-page: #F9FAFB;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, sans-serif;
+  background-color: var(--color-page);
+  color: #0f172a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+button[class*="bg-blue-600"],
+button[class*="bg-green-600"],
+button[class*="from-blue-500"],
+button[class*="from-blue-600"],
+button[class*="from-green-500"],
+button[class*="from-green-600"],
+button[class*="from-[#359de9]"],
+button[class*="from-[#22c55e]"],
+button[class*="from-[#4ade80]"],
+button[class*="to-[#365eea]"],
+button[class*="to-[#16a34a]"],
+button[class*="from-[#a97df4]"],
+button[class*="to-[#8b5cf6]"] {
+  border-color: transparent;
+  border-radius: 9999px;
+  background-color: var(--color-primary-dark);
+  background-image: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-primary) 100%);
+  color: #ffffff;
+  box-shadow: 0 12px 28px rgba(37, 99, 235, 0.24);
+}
+
+button[class*="bg-blue-600"]:hover,
+button[class*="bg-green-600"]:hover,
+button[class*="from-blue-500"]:hover,
+button[class*="from-blue-600"]:hover,
+button[class*="from-green-500"]:hover,
+button[class*="from-green-600"]:hover,
+button[class*="from-[#359de9]"]:hover,
+button[class*="from-[#22c55e]"]:hover,
+button[class*="from-[#4ade80]"]:hover,
+button[class*="to-[#365eea]"]:hover,
+button[class*="to-[#16a34a]"]:hover,
+button[class*="from-[#a97df4]"]:hover,
+button[class*="to-[#8b5cf6]"]:hover {
+  background-color: var(--color-primary-dark);
+  background-image: linear-gradient(135deg, #93c5fd 0%, var(--color-primary-dark) 100%);
+  box-shadow: 0 14px 30px rgba(37, 99, 235, 0.28);
+}

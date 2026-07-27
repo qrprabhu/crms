@@ -1,0 +1,52 @@
+import type { AccountRecord, CRMDetailSection } from "../../../lib/shared/crmTypes";
+
+export const accountSummaryFields: Array<{ key: keyof AccountRecord & string; label: string }> = [
+  { key: "accountOwner", label: "Account Owner" },
+  { key: "industry", label: "Industry" },
+  { key: "employees", label: "Employees" },
+  { key: "annualRevenue", label: "Annual Revenue" },
+  { key: "phone", label: "Phone" },
+];
+
+export const accountSections: CRMDetailSection<AccountRecord>[] = [
+  {
+    id: "account-information-section",
+    title: "Account Information",
+    type: "info",
+    fields: [
+      { key: "accountOwner", label: "Account Owner" },
+      { key: "accountName", label: "Account Name" },
+      { key: "accountSite", label: "Account Site" },
+      { key: "parentAccount", label: "Parent Account" },
+      { key: "accountNumber", label: "Account Number" },
+      { key: "rating", label: "Rating" },
+      { key: "phone", label: "Phone" },
+      { key: "fax", label: "Fax" },
+      { key: "website", label: "Website" },
+      { key: "tickerSymbol", label: "Ticker Symbol" },
+      { key: "ownership", label: "Ownership" },
+      { key: "industry", label: "Industry" },
+      { key: "employees", label: "Employees" },
+      { key: "annualRevenue", label: "Annual Revenue" },
+      { key: "sicCode", label: "SIC Code" },
+    ],
+  },
+  { id: "notes-section", title: "Notes", type: "notes" },
+  { id: "services-section", title: "Services", type: "services" },
+  { id: "connected-records-section", title: "Connected Records", type: "connected-records" },
+  { id: "attachments-section", title: "Attachments", type: "attachments" },
+  { id: "deals-section", title: "Deals", type: "deals" },
+  { id: "contacts-section", title: "Contacts", type: "contacts" },
+  { id: "emails-section", title: "Emails", type: "emails" },
+  { id: "open-activities-section", title: "Open Activities", type: "activities-open" },
+  { id: "closed-activities-section", title: "Closed Activities", type: "activities-closed" },
+  { id: "products-section", title: "Products", type: "products" },
+  { id: "quotes-section", title: "Quotes", type: "quotes" },
+  { id: "sales-orders-section", title: "Sales Orders", type: "sales-orders" },
+  { id: "invoices-section", title: "Invoices", type: "invoices" },
+  { id: "member-accounts-section", title: "Member Accounts", type: "generic" },
+  { id: "cases-section", title: "Cases", type: "cases" },
+  { id: "solutions-section", title: "Solutions", type: "solutions" },
+  { id: "social-section", title: "Social", type: "social" },
+  { id: "links-section", title: "Links", type: "links" },
+];

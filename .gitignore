@@ -1,0 +1,47 @@
+
+# Editor
+.vscode/
+Backend/.vscode/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual environment
+Backend/env/
+env/
+venv/
+.venv/
+
+# Django
+*.sqlite3
+Backend/media/
+Backend/import_uploads/
+Backend/staticfiles/
+Backend/fix_admin.py
+Backend/test_pg.py
+Backend/test_provisioning.py
+Backend/token.json
+Backend/token.txt
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/.env
+frontend/.env.*
+!frontend/.env.example
+admin_panel/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log

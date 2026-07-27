@@ -1,0 +1,22 @@
+export type DealRecord = {
+  id: string;
+  dealName: string;
+  accountId?: string;
+  accountName: string;
+  contactId?: string;
+  contactName: string;
+  ownerId?: string;
+  ownerName: string;
+  amount: number;
+  closingDate: string;
+  stage: string;
+  probability: number;
+  expectedRevenue?: number;
+  type?: string;
+  leadSource?: string;
+  campaignSource?: string;
+  nextStep?: string;
+  description?: string;
+  sourceModule?: "manual" | "lead-conversion";
+  leadId?: string;
+};

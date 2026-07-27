@@ -1,0 +1,48 @@
+from django.contrib import admin
+
+from .models import (
+    ConfiguratorRule,
+    Invoice,
+    InvoiceItem,
+    InventoryActivity,
+    InventoryAttachment,
+    InventoryEmailLog,
+    InventoryLinkedRecord,
+    InventoryNote,
+    PriceBook,
+    PriceBookProduct,
+    PriceBookRange,
+    Product,
+    ProductConfigurator,
+    PurchaseOrder,
+    PurchaseOrderItem,
+    Quote,
+    QuoteItem,
+    SalesOrder,
+    SalesOrderItem,
+    Vendor,
+)
+
+for model in [
+    Product,
+    Vendor,
+    PriceBook,
+    PriceBookRange,
+    PriceBookProduct,
+    Quote,
+    QuoteItem,
+    SalesOrder,
+    SalesOrderItem,
+    PurchaseOrder,
+    PurchaseOrderItem,
+    Invoice,
+    InvoiceItem,
+    ProductConfigurator,
+    ConfiguratorRule,
+    InventoryNote,
+    InventoryActivity,
+    InventoryAttachment,
+    InventoryEmailLog,
+    InventoryLinkedRecord,
+]:
+    admin.site.register(model)

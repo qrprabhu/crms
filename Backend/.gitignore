@@ -1,0 +1,14 @@
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+#Documents
+FRONTEND_BACKEND_CONNECTION_GUIDE.md
+LEADS_API_GUIDE.md
+MULTI_TENANCY_GUIDE.md
