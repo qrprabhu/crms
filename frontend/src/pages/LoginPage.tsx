@@ -219,55 +219,66 @@ export default function LoginPage() {
       <div className="w-full max-w-[1000px] bg-white rounded-[24px] shadow-[0_20px_50px_rgba(31,41,55,0.08)] border border-slate-100 overflow-hidden grid lg:grid-cols-2">
         
         {/* Left Panel: Welcome Splash */}
-        <div className="relative hidden lg:flex flex-col items-center justify-center bg-gradient-to-br from-[#1E3A8A] via-[#1E40AF] to-[#1D4ED8] p-12 text-white overflow-hidden">
-          {/* Subtle background graph and animated glowing orbs */}
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-white/10 via-transparent to-transparent opacity-60"></div>
-          <div className="absolute top-[-20px] left-[-20px] w-48 h-48 rounded-full bg-blue-400/25 blur-3xl animate-pulse" style={{ animationDuration: '8s' }}></div>
-          <div className="absolute bottom-[-30px] right-[-30px] w-64 h-64 rounded-full bg-amber-400/15 blur-3xl animate-pulse" style={{ animationDuration: '12s' }}></div>
+        <div className="relative hidden lg:flex flex-col justify-center bg-gradient-to-br from-[#0642C2] to-[#0D2C74] p-12 text-white overflow-hidden">
+          {/* Subtle background graph overlay and animated glowing orbs */}
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-white/10 via-transparent to-transparent opacity-50"></div>
+          <div className="absolute top-[-20px] left-[-20px] w-48 h-48 rounded-full bg-blue-400/20 blur-3xl animate-pulse" style={{ animationDuration: '8s' }}></div>
+          <div className="absolute bottom-[-30px] right-[-30px] w-64 h-64 rounded-full bg-amber-400/10 blur-3xl animate-pulse" style={{ animationDuration: '12s' }}></div>
           
-          <div className="relative z-10 flex flex-col items-center text-center">
-            {/* Custom Logo SVG with micro-pulse transition */}
-            <div className="mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-white shadow-xl hover:scale-105 transition-transform duration-300">
-              <svg className="h-12 w-12 animate-[spin_20s_linear_infinite]" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="50" cy="50" r="38" stroke="#F59E0B" strokeWidth="6" strokeDasharray="90 270" strokeDashoffset="-35" strokeLinecap="round" />
-                <circle cx="50" cy="50" r="38" stroke="#2563EB" strokeWidth="6" strokeDasharray="230 130" strokeDashoffset="90" strokeLinecap="round" />
-                <rect x="32" y="52" width="8" height="18" rx="3" fill="#2563EB" />
-                <rect x="46" y="40" width="8" height="30" rx="3" fill="#1E3A8A" />
-                <rect x="60" y="28" width="8" height="42" rx="3" fill="#F59E0B" />
-              </svg>
-            </div>
-
-            <h2 className="text-3xl font-bold tracking-tight mb-2">Welcome to</h2>
-            <h1 className="text-4xl font-extrabold tracking-tight mb-4 bg-clip-text bg-gradient-to-r from-white via-blue-100 to-amber-200">SSH Connect</h1>
+          <div className="relative z-10 grid grid-cols-12 gap-6 items-center w-full">
             
-            <p className="text-blue-100 max-w-[340px] text-sm leading-6 mb-12">
-              Your all-in-one CRM solution. Manage leads, engage customers, and grow your business.
-            </p>
+            {/* Left side of Splash: Logo + Text */}
+            <div className="col-span-7 flex flex-col items-start text-left space-y-5">
+              {/* Custom SVG Logo based on logo.jpeg */}
+              <div className="flex h-16 w-16 items-center justify-center rounded-full bg-white shadow-xl p-3 hover:scale-105 transition-transform duration-300">
+                <svg className="h-full w-full" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  {/* Outer blue crescent ring */}
+                  <path d="M 78 35 A 36 36 0 1 0 35 83" stroke="#2563EB" strokeWidth="6.5" strokeLinecap="round" fill="none" />
+                  
+                  {/* Dark navy swoosh at the bottom-right */}
+                  <path d="M 30 75 C 45 88, 70 85, 84 62 C 86 58, 85 45, 84 43 C 81 48, 75 60, 50 72 Z" fill="#1E3A8A" />
+                  
+                  {/* Left Person (Blue) */}
+                  <circle cx="37" cy="52" r="5" fill="#2563EB" />
+                  <rect x="33" y="60" width="8" height="16" rx="4" fill="#2563EB" />
+                  
+                  {/* Middle Person (Navy) */}
+                  <circle cx="50" cy="43" r="5" fill="#1E3A8A" />
+                  <rect x="46" y="51" width="8" height="24" rx="4" fill="#1E3A8A" />
+                  
+                  {/* Right Person (Gold/Amber) */}
+                  <circle cx="63" cy="35" r="5" fill="#D97706" />
+                  <rect x="59" y="43" width="8" height="31" rx="4" fill="#D97706" />
+                </svg>
+              </div>
 
-            {/* Glowing Line Graph Visual */}
-            <div className="w-full max-w-[280px] h-32 relative opacity-85 hover:opacity-100 transition duration-300">
-              <svg className="w-full h-full" viewBox="0 0 200 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                {/* Horizontal grid lines */}
-                <line x1="0" y1="20" x2="200" y2="20" stroke="white" strokeOpacity="0.1" strokeDasharray="4 4" />
-                <line x1="0" y1="50" x2="200" y2="50" stroke="white" strokeOpacity="0.1" strokeDasharray="4 4" />
-                <line x1="0" y1="80" x2="200" y2="80" stroke="white" strokeOpacity="0.1" strokeDasharray="4 4" />
-                {/* Curve area projection */}
-                <path d="M0,90 C40,85 60,60 90,50 C120,40 140,25 200,10 L200,100 L0,100 Z" fill="url(#areaGrad)" opacity="0.2" />
-                {/* Line path */}
-                <path d="M0,90 C40,85 60,60 90,50 C120,40 140,25 200,10" stroke="url(#lineGrad)" strokeWidth="3.5" strokeLinecap="round" />
-                <defs>
-                  <linearGradient id="lineGrad" x1="0" y1="90" x2="200" y2="10" gradientUnits="userSpaceOnUse">
-                    <stop stopColor="#3B82F6" />
-                    <stop offset="0.6" stopColor="#8B5CF6" />
-                    <stop offset="1" stopColor="#F59E0B" />
-                  </linearGradient>
-                  <linearGradient id="areaGrad" x1="0" y1="90" x2="200" y2="10" gradientUnits="userSpaceOnUse">
-                    <stop stopColor="#3B82F6" stopOpacity="0.8" />
-                    <stop offset="1" stopColor="#8B5CF6" stopOpacity="0" />
-                  </linearGradient>
-                </defs>
-              </svg>
+              <div>
+                <h2 className="text-2xl font-bold tracking-tight text-white/95 leading-none">Welcome to</h2>
+                <h1 className="text-3.5xl font-extrabold tracking-tight text-white leading-none mt-1.5">SSH Connect</h1>
+              </div>
+              
+              <p className="text-blue-100/90 text-xs leading-5 max-w-[260px]">
+                Your all-in-one CRM solution. Manage leads, engage customers, and grow your business.
+              </p>
             </div>
+
+            {/* Right side of Splash: Curved line & bar graph visual */}
+            <div className="col-span-5 flex justify-end items-center h-full pt-10">
+              <div className="w-full max-w-[170px] relative opacity-85 hover:opacity-100 transition duration-300">
+                <svg className="w-full h-auto" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  {/* Vertical bar graphs */}
+                  <rect x="18" y="60" width="8" height="40" rx="3" fill="#3B82F6" fillOpacity="0.25" />
+                  <rect x="38" y="45" width="8" height="55" rx="3" fill="#3B82F6" fillOpacity="0.35" />
+                  <rect x="58" y="30" width="8" height="70" rx="3" fill="#3B82F6" fillOpacity="0.5" />
+                  <rect x="78" y="15" width="8" height="85" rx="3" fill="#3B82F6" fillOpacity="0.65" />
+                  
+                  {/* Curve line path with arrow at the end */}
+                  <path d="M 5 80 C 35 75, 60 50, 92 10" stroke="#3B82F6" strokeWidth="4.5" strokeLinecap="round" fill="none" />
+                  <path d="M 83 11 L 93 9 L 91 19" stroke="#3B82F6" strokeWidth="4.5" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+                </svg>
+              </div>
+            </div>
+
           </div>
         </div>
 

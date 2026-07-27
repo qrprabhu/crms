@@ -33,7 +33,6 @@ import {
   Wrench,
   X,
 } from "lucide-react";
-import companyLogo from "../../assets/Picsart_26-04-04_13-24-20-688-removebg-preview.png";
 import { useAuth } from "../../hooks/useAuth";
 import { preloadRouteResources } from "../../lib/routePreload";
 
@@ -260,7 +259,18 @@ export default function Sidebar({ sidebarOpen, setSidebarOpen }: SidebarProps) {
           {sidebarOpen ? (
             <div className="flex items-center justify-between px-3 pt-3 pb-2">
               <div className="flex items-center">
-                <img src={companyLogo} alt="SSH Connect Logo" className="h-[34px] w-[34px] -translate-y-[2px] rounded-md object-contain" />
+                <div className="flex h-[34px] w-[34px] -translate-y-[2px] items-center justify-center rounded-full bg-white p-1 shadow-sm">
+                  <svg className="h-[28px] w-[28px]" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M 78 35 A 36 36 0 1 0 35 83" stroke="#2563EB" strokeWidth="6.5" strokeLinecap="round" fill="none" />
+                    <path d="M 30 75 C 45 88, 70 85, 84 62 C 86 58, 85 45, 84 43 C 81 48, 75 60, 50 72 Z" fill="#1E3A8A" />
+                    <circle cx="37" cy="52" r="5" fill="#2563EB" />
+                    <rect x="33" y="60" width="8" height="16" rx="4" fill="#2563EB" />
+                    <circle cx="50" cy="43" r="5" fill="#1E3A8A" />
+                    <rect x="46" y="51" width="8" height="24" rx="4" fill="#1E3A8A" />
+                    <circle cx="63" cy="35" r="5" fill="#D97706" />
+                    <rect x="59" y="43" width="8" height="31" rx="4" fill="#D97706" />
+                  </svg>
+                </div>
                 <div className="ml-2.5 text-[17px] font-bold">SSH Connect</div>
               </div>
 
@@ -286,7 +296,18 @@ export default function Sidebar({ sidebarOpen, setSidebarOpen }: SidebarProps) {
                 className="rounded-md transition hover:opacity-90"
                 aria-label="Expand sidebar"
               >
-                <img src={companyLogo} alt="SSH Connect Logo" className="h-[34px] w-[34px] -translate-y-[2px] rounded-md object-contain" />
+                <div className="flex h-[34px] w-[34px] -translate-y-[2px] items-center justify-center rounded-full bg-white p-1 shadow-sm">
+                  <svg className="h-[28px] w-[28px]" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M 78 35 A 36 36 0 1 0 35 83" stroke="#2563EB" strokeWidth="6.5" strokeLinecap="round" fill="none" />
+                    <path d="M 30 75 C 45 88, 70 85, 84 62 C 86 58, 85 45, 84 43 C 81 48, 75 60, 50 72 Z" fill="#1E3A8A" />
+                    <circle cx="37" cy="52" r="5" fill="#2563EB" />
+                    <rect x="33" y="60" width="8" height="16" rx="4" fill="#2563EB" />
+                    <circle cx="50" cy="43" r="5" fill="#1E3A8A" />
+                    <rect x="46" y="51" width="8" height="24" rx="4" fill="#1E3A8A" />
+                    <circle cx="63" cy="35" r="5" fill="#D97706" />
+                    <rect x="59" y="43" width="8" height="31" rx="4" fill="#D97706" />
+                  </svg>
+                </div>
               </button>
             </div>
           )}
