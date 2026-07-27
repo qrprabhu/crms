@@ -218,7 +218,60 @@ export default function LoginPage() {
     <div className="min-h-screen bg-slate-50 flex items-center justify-center p-4 lg:p-8">
       <div className="w-full max-w-[1000px] bg-white rounded-[24px] shadow-[0_20px_50px_rgba(31,41,55,0.08)] border border-slate-100 overflow-hidden grid lg:grid-cols-2">
         
-        {/* Left Panel: Form */}
+        {/* Left Panel: Welcome Splash */}
+        <div className="relative hidden lg:flex flex-col items-center justify-center bg-gradient-to-br from-[#1E3A8A] via-[#1E40AF] to-[#1D4ED8] p-12 text-white overflow-hidden">
+          {/* Subtle background graph and animated glowing orbs */}
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-white/10 via-transparent to-transparent opacity-60"></div>
+          <div className="absolute top-[-20px] left-[-20px] w-48 h-48 rounded-full bg-blue-400/25 blur-3xl animate-pulse" style={{ animationDuration: '8s' }}></div>
+          <div className="absolute bottom-[-30px] right-[-30px] w-64 h-64 rounded-full bg-amber-400/15 blur-3xl animate-pulse" style={{ animationDuration: '12s' }}></div>
+          
+          <div className="relative z-10 flex flex-col items-center text-center">
+            {/* Custom Logo SVG with micro-pulse transition */}
+            <div className="mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-white shadow-xl hover:scale-105 transition-transform duration-300">
+              <svg className="h-12 w-12 animate-[spin_20s_linear_infinite]" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="50" cy="50" r="38" stroke="#F59E0B" strokeWidth="6" strokeDasharray="90 270" strokeDashoffset="-35" strokeLinecap="round" />
+                <circle cx="50" cy="50" r="38" stroke="#2563EB" strokeWidth="6" strokeDasharray="230 130" strokeDashoffset="90" strokeLinecap="round" />
+                <rect x="32" y="52" width="8" height="18" rx="3" fill="#2563EB" />
+                <rect x="46" y="40" width="8" height="30" rx="3" fill="#1E3A8A" />
+                <rect x="60" y="28" width="8" height="42" rx="3" fill="#F59E0B" />
+              </svg>
+            </div>
+
+            <h2 className="text-3xl font-bold tracking-tight mb-2">Welcome to</h2>
+            <h1 className="text-4xl font-extrabold tracking-tight mb-4 bg-clip-text bg-gradient-to-r from-white via-blue-100 to-amber-200">SSH Connect</h1>
+            
+            <p className="text-blue-100 max-w-[340px] text-sm leading-6 mb-12">
+              Your all-in-one CRM solution. Manage leads, engage customers, and grow your business.
+            </p>
+
+            {/* Glowing Line Graph Visual */}
+            <div className="w-full max-w-[280px] h-32 relative opacity-85 hover:opacity-100 transition duration-300">
+              <svg className="w-full h-full" viewBox="0 0 200 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                {/* Horizontal grid lines */}
+                <line x1="0" y1="20" x2="200" y2="20" stroke="white" strokeOpacity="0.1" strokeDasharray="4 4" />
+                <line x1="0" y1="50" x2="200" y2="50" stroke="white" strokeOpacity="0.1" strokeDasharray="4 4" />
+                <line x1="0" y1="80" x2="200" y2="80" stroke="white" strokeOpacity="0.1" strokeDasharray="4 4" />
+                {/* Curve area projection */}
+                <path d="M0,90 C40,85 60,60 90,50 C120,40 140,25 200,10 L200,100 L0,100 Z" fill="url(#areaGrad)" opacity="0.2" />
+                {/* Line path */}
+                <path d="M0,90 C40,85 60,60 90,50 C120,40 140,25 200,10" stroke="url(#lineGrad)" strokeWidth="3.5" strokeLinecap="round" />
+                <defs>
+                  <linearGradient id="lineGrad" x1="0" y1="90" x2="200" y2="10" gradientUnits="userSpaceOnUse">
+                    <stop stopColor="#3B82F6" />
+                    <stop offset="0.6" stopColor="#8B5CF6" />
+                    <stop offset="1" stopColor="#F59E0B" />
+                  </linearGradient>
+                  <linearGradient id="areaGrad" x1="0" y1="90" x2="200" y2="10" gradientUnits="userSpaceOnUse">
+                    <stop stopColor="#3B82F6" stopOpacity="0.8" />
+                    <stop offset="1" stopColor="#8B5CF6" stopOpacity="0" />
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        {/* Right Panel: Form */}
         <div className="p-8 lg:p-12 flex flex-col justify-between min-h-[520px]">
           <div>
             {/* Header */}
@@ -254,7 +307,7 @@ export default function LoginPage() {
                         if (error) setError("");
                       }}
                       placeholder="Email address"
-                      className="w-full rounded-[8px] border border-slate-200 pl-10 pr-3 py-2.5 text-sm text-slate-800 outline-none transition-all focus:border-[#2563EB] focus:ring-2 focus:ring-blue-500/10"
+                      className="w-full rounded-[8px] border border-slate-200 pl-10 pr-3 py-2.5 text-sm text-slate-800 outline-none transition-all focus:border-[#2563EB] focus:ring-2 focus:ring-blue-500/10 focus:shadow-sm"
                     />
                   </div>
                   {loginErrors.email && (
@@ -283,7 +336,7 @@ export default function LoginPage() {
                         if (error) setError("");
                       }}
                       placeholder="Password"
-                      className="w-full rounded-[8px] border border-slate-200 pl-10 pr-10 py-2.5 text-sm text-slate-800 outline-none transition-all focus:border-[#2563EB] focus:ring-2 focus:ring-blue-500/10"
+                      className="w-full rounded-[8px] border border-slate-200 pl-10 pr-10 py-2.5 text-sm text-slate-800 outline-none transition-all focus:border-[#2563EB] focus:ring-2 focus:ring-blue-500/10 focus:shadow-sm"
                     />
                     <button type="button" onClick={() => setShowPassword((v) => !v)}
                       className="absolute inset-y-0 right-3 flex items-center text-slate-400 hover:text-slate-600 text-xs" tabIndex={-1}>
@@ -316,26 +369,8 @@ export default function LoginPage() {
                 )}
 
                 <button type="submit" disabled={loading}
-                  className="mt-2 w-full rounded-[8px] bg-blue-600 hover:bg-blue-700 py-2.5 text-sm font-semibold text-white transition duration-200 disabled:opacity-60">
+                  className="mt-2 w-full rounded-[8px] bg-blue-600 hover:bg-blue-700 py-2.5 text-sm font-semibold text-white shadow-md hover:shadow-lg transition duration-200 disabled:opacity-60 hover:scale-[1.01] active:scale-[0.99] transform">
                   {loading ? "Signing in…" : "Sign In"}
-                </button>
-
-                <div className="relative flex items-center justify-center my-4">
-                  <div className="absolute inset-0 flex items-center">
-                    <div className="w-full border-t border-slate-200"></div>
-                  </div>
-                  <span className="relative px-3 bg-white text-xs text-slate-500 uppercase">or</span>
-                </div>
-
-                <button type="button"
-                  className="w-full flex items-center justify-center rounded-[8px] border border-slate-200 bg-white hover:bg-slate-50 py-2.5 text-sm font-semibold text-slate-700 transition duration-200">
-                  <svg className="mr-2.5 h-4 w-4" viewBox="0 0 24 24" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M21.35,11.1H12v2.7h5.38c-0.24,1.28 -0.96,2.37 -2.04,3.1v2.58h3.3c1.93,-1.78 3.04,-4.4 3.04,-7.48c0,-0.61 -0.06,-1.2 -0.16,-1.75Z" fill="#4285F4" />
-                    <path d="M12,20.75c2.36,0 4.34,-0.78 5.79,-2.13l-3.3,-2.58c-0.91,0.61 -2.08,0.98 -3.39,0.98c-2.61,0 -4.82,-1.76 -5.61,-4.12H2.07v2.66c1.47,2.93 4.51,4.92 8.03,4.92Z" fill="#34A853" />
-                    <path d="M6.39,12.9c-0.2,-0.61 -0.31,-1.27 -0.31,-1.9c0,-0.63 0.11,-1.29 0.31,-1.9V6.44H2.07c-0.67,1.34 -1.07,2.85 -1.07,4.56c0,1.71 0.4,3.22 1.07,4.56l3.3,-2.56c-0.2,-0.61 -0.31,-1.27 -0.31,-1.9Z" fill="#FBBC05" />
-                    <path d="M12,5.25c1.29,0 2.45,0.44 3.36,1.31l2.52,-2.52c-1.52,-1.42 -3.51,-2.29 -5.88,-2.29c-3.52,0 -6.56,1.99 -8.03,4.92l3.32,2.56c0.79,-2.36 3,-4.12 5.61,-4.12Z" fill="#EA4335" />
-                  </svg>
-                  Sign in with Google
                 </button>
               </form>
             )}
@@ -430,7 +465,7 @@ export default function LoginPage() {
                 )}
 
                 <button type="submit" disabled={fpLoading}
-                  className="w-full rounded-[8px] bg-blue-600 hover:bg-blue-700 py-2.5 text-sm font-semibold text-white transition disabled:opacity-60">
+                  className="w-full rounded-[8px] bg-blue-600 hover:bg-blue-700 py-2.5 text-sm font-semibold text-white transition disabled:opacity-60 font-semibold shadow-md hover:shadow-lg">
                   {fpLoading ? "Resetting…" : "Reset Password"}
                 </button>
                 <button type="button" onClick={resetForgot}
@@ -444,57 +479,6 @@ export default function LoginPage() {
           {/* Footer */}
           <div className="mt-8 text-center text-xs text-slate-400">
             © 2025 SSH Connect. All rights reserved.
-          </div>
-        </div>
-
-        {/* Right Panel: Welcome Splash */}
-        <div className="relative hidden lg:flex flex-col items-center justify-center bg-gradient-to-br from-[#1E3A8A] via-[#1E40AF] to-[#1D4ED8] p-12 text-white overflow-hidden">
-          {/* Subtle background graph overlay */}
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-white/10 via-transparent to-transparent opacity-60"></div>
-          
-          <div className="relative z-10 flex flex-col items-center text-center">
-            {/* Custom Logo SVG */}
-            <div className="mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-white shadow-xl">
-              <svg className="h-12 w-12" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="50" cy="50" r="38" stroke="#F59E0B" strokeWidth="6" strokeDasharray="90 270" strokeDashoffset="-35" strokeLinecap="round" />
-                <circle cx="50" cy="50" r="38" stroke="#2563EB" strokeWidth="6" strokeDasharray="230 130" strokeDashoffset="90" strokeLinecap="round" />
-                <rect x="32" y="52" width="8" height="18" rx="3" fill="#2563EB" />
-                <rect x="46" y="40" width="8" height="30" rx="3" fill="#1E3A8A" />
-                <rect x="60" y="28" width="8" height="42" rx="3" fill="#F59E0B" />
-              </svg>
-            </div>
-
-            <h2 className="text-3xl font-bold tracking-tight mb-3">Welcome to</h2>
-            <h1 className="text-4xl font-extrabold tracking-tight mb-4">SSH Connect</h1>
-            
-            <p className="text-blue-100 max-w-[340px] text-sm leading-6 mb-12">
-              Your all-in-one CRM solution. Manage leads, engage customers, and grow your business.
-            </p>
-
-            {/* Glowing Line Graph Visual */}
-            <div className="w-full max-w-[280px] h-32 relative opacity-70">
-              <svg className="w-full h-full" viewBox="0 0 200 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                {/* Horizontal grid lines */}
-                <line x1="0" y1="20" x2="200" y2="20" stroke="white" strokeOpacity="0.1" strokeDasharray="4 4" />
-                <line x1="0" y1="50" x2="200" y2="50" stroke="white" strokeOpacity="0.1" strokeDasharray="4 4" />
-                <line x1="0" y1="80" x2="200" y2="80" stroke="white" strokeOpacity="0.1" strokeDasharray="4 4" />
-                {/* Curve area projection */}
-                <path d="M0,90 C40,85 60,60 90,50 C120,40 140,25 200,10 L200,100 L0,100 Z" fill="url(#areaGrad)" opacity="0.15" />
-                {/* Line path */}
-                <path d="M0,90 C40,85 60,60 90,50 C120,40 140,25 200,10" stroke="url(#lineGrad)" strokeWidth="3" strokeLinecap="round" />
-                <defs>
-                  <linearGradient id="lineGrad" x1="0" y1="90" x2="200" y2="10" gradientUnits="userSpaceOnUse">
-                    <stop stopColor="#3B82F6" />
-                    <stop offset="0.6" stopColor="#8B5CF6" />
-                    <stop offset="1" stopColor="#F59E0B" />
-                  </linearGradient>
-                  <linearGradient id="areaGrad" x1="0" y1="90" x2="200" y2="10" gradientUnits="userSpaceOnUse">
-                    <stop stopColor="#3B82F6" stopOpacity="0.8" />
-                    <stop offset="1" stopColor="#8B5CF6" stopOpacity="0" />
-                  </linearGradient>
-                </defs>
-              </svg>
-            </div>
           </div>
         </div>
 
